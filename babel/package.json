@@ -8,13 +8,14 @@
     "build": "./node_modules/.bin/babel src/js --out-dir src/gen"
   },
   "dependencies": {
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
-    "shadow-cljs": "^2.0.141"
+    "shadow-cljs": "^2.2.25"
   }
 }
