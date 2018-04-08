@@ -1,22 +1,29 @@
-"use strict";
+import * as React from "react";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+const MyComponent = ({ key }) => {
+  console.log('child props', key);
+  return React.createElement(
+    "li",
+    { key: key },
+    "Hello JSX!"
+  );
+};
 
-
-var _react = require("react");
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function MyComponent() {
-  return _react2.default.createElement(
+const MyDefaultComponent = ({ children }) => React.createElement(
+  "div",
+  null,
+  React.createElement(
     "h1",
     null,
-    "Woah JSX!?"
-  );
-}
+    "Hello JSX!"
+  ),
+  React.createElement(
+    "ul",
+    null,
+    children
+  )
+);
 
-exports.MyComponent = MyComponent;
+export { MyComponent };
+
+export default MyDefaultComponent;

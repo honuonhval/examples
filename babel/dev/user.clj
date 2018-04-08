@@ -2,4 +2,4 @@
   (:require [shadow.cljs.devtools.api :as dapi]))
 
 (defn cljs-repl []
-  (dapi/nrepl-select :npm))
+  (dapi/nrepl-select :dev))

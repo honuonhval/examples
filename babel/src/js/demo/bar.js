@@ -1,9 +1,24 @@
-import React from "react";
+import * as React from "react"
 
-function MyComponent() {
-  return <h1>
-    Woah JSX!?
-  </h1>;
+
+const MyComponent = ({ key }) => {
+  console.log('child props', key)
+  return (
+    <li key={key}>
+      Hello JSX!
+    </li>
+  )
 }
 
-export { MyComponent };
+const MyDefaultComponent = ({ children }) =>
+  <div>
+    <h1>Hello JSX!</h1>
+    <ul>
+      {children}
+    </ul>
+  </div>
+
+
+export { MyComponent }
+
+export default MyDefaultComponent

@@ -1,27 +1,19 @@
 (ns demo.app
-  (:require [shadow.markup.react :as html :refer ($ defstyled)]
-            [shadow.dom :as dom]
-            ["react" :as react]
+  (:require ["react" :as react]
             ["react-dom" :refer (render)]
-            ["./bar" :refer (MyComponent)]))
+            ["./bar" :refer (MyComponent) :default MyDefaultComponent]))
 
-(defstyled title :h1
-           [env]
-           {:color "red"})
 
 (defn root []
-  (html/div
-    (title "CLJS!")
-    ;; $ is a little interop helper
-    ($ MyComponent {:hello "this is from CLJS!!!"})
-    ;; this works as well
-    #_ (react/createElement Foo #js {:hello "also from CLJS!"})))
+  (let [num-children 5
+        children-props (clj->js (map hash-map
+                                     (repeat num-children :key)
+                                     (range num-children)))]
+    (MyDefaultComponent #js {:children (mapv MyComponent children-props)})))
 
 (defn ^:export mount-root []
-  (render (root) (dom/by-id "app")))
-
+  (render (root) (.getElementById js/document "app")))
 
 (defn ^:export main []
-  (js/console.log "app init")
+  (js/console.log "app init" react MyComponent)
   (mount-root))
-
