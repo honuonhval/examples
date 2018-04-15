@@ -8,7 +8,7 @@
  :dependencies
          []
 
- :builds {:dev
+ :builds {:app
           {:target     :browser
            :modules    {:base {:entries [demo.app]}}
 
