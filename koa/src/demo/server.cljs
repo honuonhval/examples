@@ -18,8 +18,8 @@
   (-> (next)
       (.then
         (fn []
-          (set! (. ctx -body) (str/upper-case (. ctx -body)))
-          ))))
+          (set! (. ctx -body) (str/upper-case (. ctx -body)))))))
+
 
 (defn main []
   (let [app (koa.)]
@@ -29,4 +29,5 @@
       (.use delay-by-two-seconds)
       (.use handler)
       (.use append-async)
-      (.listen 3000))))
+      (.listen 3000))
+    (println "Listening on 3000")))
