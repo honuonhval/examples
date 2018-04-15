@@ -25,7 +25,7 @@ node index.js
 
 Or
 ```
-webpack -d
+yarn webpack
 ```
 
 Or
@@ -33,7 +33,7 @@ Or
 browserify -d index.js -o dist/bundle.js
 ```
 
-And then `open dist/index.html`.
+And then `open index.html`.
 
 
 # Production mode

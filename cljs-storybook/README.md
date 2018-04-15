@@ -4,13 +4,13 @@ Quick example showing how to use storybook with CLJS.
 
 
 ```bash
-$ npm install
-$ npx shadow-cljs watch stories
-$ npm run storybook
-$ open http://localhost:6006
+yarn
+npx shadow-cljs watch stories
+yarn storybook
+open http://localhost:6006
 
 # to build static version
-$ npm run build-storybook
+npm run build-storybook
 ```
 
 Code was created by running the `getstorybook` CLI.

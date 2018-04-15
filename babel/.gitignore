@@ -1,0 +1,6 @@
+public/js/compiled
+.shadow-cljs
+yarn-error.log
+pom.xml
+node_modules
+src/gen

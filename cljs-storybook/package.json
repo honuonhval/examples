@@ -21,6 +21,6 @@
     "@storybook/addons": "^3.3.10",
     "@storybook/react": "^3.3.10",
     "babel-core": "^6.26.0",
-    "shadow-cljs": "^2.0.142"
+    "shadow-cljs": "^2.2.31"
   }
 }

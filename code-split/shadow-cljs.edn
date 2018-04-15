@@ -1,4 +1,3 @@
-;; shadow-cljs.edn configuration
 {:source-paths ["src"]
  :dependencies []
 
@@ -23,5 +22,5 @@
    {:output-dir "production/js"}
 
    :compiler-options
-   {:externs ["my-externs.js"]}
-   }}}
+   {:externs ["my-externs.js"]}}}}
+
