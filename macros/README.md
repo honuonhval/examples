@@ -1,5 +1,5 @@
 ```
-shadow-cljs --build app --once
+shadow-cljs compile app 
 
 node target/app.js
 ```
