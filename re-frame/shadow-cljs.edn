@@ -15,11 +15,8 @@
                  :modules    {:base {:entries [demo.core]}}
                  :output-dir "public/js/compiled"
                  :asset-path "/js/compiled"
-                 :dev        {:compiler-options {:closure-defines {"re_frame.trace.trace_enabled_QMARK_"        true
-                                                                   "day8.re_frame.tracing.trace_enabled_QMARK_" true}}}
-
-                 :release    {:compiler-options {:closure-defines {"re_frame.trace.trace_enabled_QMARK_"        false
-                                                                   "day8.re_frame.tracing.trace_enabled_QMARK_" false}}}
+                 :dev        {:compiler-options {:closure-defines {re_frame.trace.trace_enabled?        true
+                                                                   day8.re-frame.tracing.trace-enabled? true}}}
                  :devtools   {:http-root    "public"
                               :http-handler shadow.http.push-state/handle
                               :http-port    8280
@@ -32,12 +29,12 @@
                  :ns-regexp        "-test$"
                  :runner-ns        shadow.test.browser
                  :test-dir         "out/browser-test"
-                 :compiler-options {:closure-defines {"re_frame.trace.trace_enabled_QMARK_"        true
-                                                      "day8.re_frame.tracing.trace_enabled_QMARK_" true}}
+                 :compiler-options {:closure-defines {re-frame.trace.trace-enabled?        true
+                                                      day8.re-frame.tracing.trace-enabled? true}}
                  :devtools         {:http-root "out/browser-test"
                                     :http-port 8290}}
 
                 :karma-test
                 {:target    :karma
-                 :ns-regexp        "-test$"
+                 :ns-regexp "-test$"
                  :output-to "out/karma/test.js"}}}
