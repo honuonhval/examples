@@ -1,35 +1,49 @@
-# Starter Template
+# shadow-cljs re-frame example
 
-Simple Shadow CLJS Template Project
+A simple `re-frame` template
+.
 
-## Getting Started
-
+### Install Javascript dependencies
 ```
-yarn watch
+yarn
+```
+
+### Run shadow-cljs dev server
+```
+npx shadow-cljs watch app
+
 open http://localhost:8280
 ```
 
-## Testing
+### Run tests
 
-Interactive:
+[Interactive](https://shadow-cljs.github.io/docs/UsersGuide.html#target-browser-test):
 
+To run tests with `shadow-cljs` when files change:
 ```
-yarn watch-test
+npx shadow-cljs watch browser-test
+
 open http://localhost:8290
 ```
 
-CI Server:
+[karma](https://shadow-cljs.github.io/docs/UsersGuide.html#target-karma):
 
+For a single run appropriate for a CI environment:
 ```
 yarn test
 ```
 
+### Clojurescript REPL
 
-### ClojureScript Repl
+If you have the app watch task running (`npx shadow-cljs watch app`), you should be able to connect to its nREPL server at `localhost:8230`.
 
+Once connected, `dev/user.clj` should load automatically, exposing a `cljs-repl` function we've defined in the `user` namespace. 
+
+This is basically just an alias for:
+
+```clj
+(require '[shadow.cljs.devtools.api :as dapi])
+(dapi/nrepl-select :app)
 ```
-cider-connect
-localhost:8230
 
-(cljs-repl)
-```
+Evaluating `(cljs-repl)` should start the Clojurescript REPL for the `:app` build.
