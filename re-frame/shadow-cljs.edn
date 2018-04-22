@@ -29,11 +29,15 @@
 
                 :browser-test
                 {:target           :browser-test
+                 :ns-regexp        "-test$"
+                 :runner-ns        shadow.test.browser
                  :test-dir         "out/browser-test"
-                 :compiler-options {:closure-defines {re-frame.trace.trace-enabled? true}}
+                 :compiler-options {:closure-defines {"re_frame.trace.trace_enabled_QMARK_"        true
+                                                      "day8.re_frame.tracing.trace_enabled_QMARK_" true}}
                  :devtools         {:http-root "out/browser-test"
                                     :http-port 8290}}
 
                 :karma-test
                 {:target    :karma
+                 :ns-regexp        "-test$"
                  :output-to "out/karma/test.js"}}}
