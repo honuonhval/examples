@@ -18,7 +18,7 @@ Compile the `:app` build once like this
 
 For development start a worker process which will watch source files and recompile code on changes. It will also provide the REPL.
 ```
-(shadow.cljs.devtools.api/start-worker :app)
+(shadow.cljs.devtools.api/watch :app)
 ```
 
 It serves the HTML at http://localhost:11101
