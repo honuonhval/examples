@@ -1,0 +1,28 @@
+{
+  "name": "jupyter-lab-extension",
+  "version": "0.0.1",
+  "description": "A Jupyter Lab extension build with shadow-cljs",
+  "keywords": [
+    "jupyterlab-extension"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf ./lib",
+    "dev": "npm install && shadow-cljs watch extension",
+    "build": "npm run clean && npm install && shadow-cljs release extension"
+  },
+  "files": [
+    "index.js",
+    "lib/*.{js,js.map}",
+    "style/*.css"
+  ],
+  "license": "AGPL-3.0-only",
+  "dependencies": {
+    "@jupyterlab/cells": "^1.0.1",
+    "@jupyterlab/notebook": "^1.0.0",
+  },
+  "devDependencies": {},
+  "jupyterlab": {
+    "extension": true
+  }
+}
