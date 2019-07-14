@@ -1,0 +1,14 @@
+{:source-paths ["src"]
+ :dependencies {org.clojure/clojurescript  {:mvn/version "1.10.520"}
+                thheller/shadow-cljs  {:mvn/version "2.8.40"}}
+
+ :nrepl {:port 9000}
+ :socket-repl {:port 60606}
+
+ :builds {:extension {:target :npm-module
+                      :output-dir "lib"
+                      :entries [jupyter-lab-extension]
+                      :runtime :browser
+
+                      :release {:compiler-options {:optimizations :advanced}
+                                :infer-externs :auto}}}}
